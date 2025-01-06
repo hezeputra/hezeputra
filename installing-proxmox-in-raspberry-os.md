@@ -59,7 +59,7 @@ yourhostname
 > [!IMPORTANT]
 >
 > 1. Replace `192.168.0.XXX` with the static IP of your Raspberry Pi.
-> 2. Replace `yourhostname` with hostname of your choice. If you already setup your hostname in **Step 1.1**, you would likely to find the `yourhostname`already filled by hostname of your choice.
+> 2. Replace `yourhostname` with hostname of your choice. If you already setup your hostname in **Step 1.1**, you would likely to find the `yourhostname` already filled by hostname of your choice.
 
 ## Step 5 - Add Proxmox VE Port to your apt source
 
