@@ -56,9 +56,10 @@ ff02::2 ip6-allrouters
 yourhostname
 ```
 
-> [!IMPORTANT]  
-> Replace `192.168.0.XXX` with the static IP you assigned your Pi in your router.
-> Replace `yourhostname` with your hostname. If you already setup your hostname in **Step 1.1**, you would likely to find the `yourhostname`already filled by hostname of your choice.
+> [!IMPORTANT]
+>
+> 1. Replace `192.168.0.XXX` with the static IP you assigned your Pi in your router.
+> 2. Replace `yourhostname` with your hostname. If you already setup your hostname in **Step 1.1**, you would likely to find the `yourhostname`already filled by hostname of your choice.
 
 ## Step 5 - Add Proxmox VE Port to your apt source
 
