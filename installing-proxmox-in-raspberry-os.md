@@ -1,4 +1,4 @@
-### Installing Proxmox in Raspberry Pi OS
+# Installing Proxmox in Raspberry Pi OS
 
 This is my note to install Proxmox VE port for Arm64 in Raspberry Pi OS. The latest version that I install is Proxmox 8.3 in a Raspberry Pi OS (Bookworm Deb 12.8) on Raspberry Pi 5 in January 2025. This note doesn't use UEFI boot that is showed by several tech enthusiast [^1] [^2], instead the proxmox running on top of Raspberry Pi OS. Huge credit I give to enjikaka's instruction at Github Gists as my main reference[^3].
 
