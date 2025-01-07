@@ -1,6 +1,6 @@
 # Installing Proxmox in Raspberry Pi OS
 
-This is my note to install Proxmox VE port for Arm64 in Raspberry Pi OS. The latest version that I install is Proxmox 8.3 in a Raspberry Pi OS (Bookworm Deb 12.8) on Raspberry Pi 5 in January 2025. This note doesn't use UEFI boot that is showed by several tech enthusiast [^1] [^2], instead the proxmox running on top of Raspberry Pi OS. Huge credit I give to enjikaka's instruction at Github Gists as my main reference[^3].
+This is my note to install Proxmox VE port for Arm64 in Raspberry Pi OS. The latest version that I install is Proxmox 8.3 in a Raspberry Pi OS (Bookworm Deb 12.8) on Raspberry Pi 5 in January 2025. This note doesn't use UEFI boot that is showed by several tech enthusiast[^1][^2], instead the proxmox running on top of Raspberry Pi OS. Huge credit I give to enjikaka's instruction at Github Gists as my main reference[^3].
 
 ## Step 1 - Flashing the OS (headless instalation)
 
@@ -71,6 +71,6 @@ yourhostname
 
 ## Reference
 
-[^1] [**_I built a Proxmox home lab using my Raspberry Pi - here's how I did it_** - by Ayush Pande at xda-developers.com](https://www.xda-developers.com/install-proxmox-on-raspberry-pi/)
-[^2] [**_Installing Proxmox 8.1 on Raspberry Pi 5_** - by Novaspirit Tech at youtube](https://www.youtube.com/watch?v=oe1_JVl63a0&ab_channel=NovaspiritTech)
-[^3] [**_Installing Proxmox on Raspberry Pi 4 and 5_** - by enjikaka at Github Gists](https://gist.github.com/enjikaka/52d62c9c5462748dbe35abe3c7e37f9a)
+[^1]: [**_I built a Proxmox home lab using my Raspberry Pi - here's how I did it_** - by Ayush Pande at xda-developers.com](https://www.xda-developers.com/install-proxmox-on-raspberry-pi/)
+[^2]: [**_Installing Proxmox 8.1 on Raspberry Pi 5_** - by Novaspirit Tech at youtube](https://www.youtube.com/watch?v=oe1_JVl63a0&ab_channel=NovaspiritTech)
+[^3]: [**_Installing Proxmox on Raspberry Pi 4 and 5_** - by enjikaka at Github Gists](https://gist.github.com/enjikaka/52d62c9c5462748dbe35abe3c7e37f9a)
