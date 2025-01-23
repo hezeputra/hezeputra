@@ -3,7 +3,6 @@
 ## Instalation
 
 ```
-cp -r /etc/nginx /etc/nginx-backup
 wget http://nginx.org/keys/nginx_signing.key
 apt-key add nginx_signing.key
 echo "deb http://nginx.org/packages/mainline/ubuntu `lsb_release -cs` nginx" | tee /etc/apt/sources.list.d/nginx.list
