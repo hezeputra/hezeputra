@@ -3,18 +3,6 @@
 ## Instalation
 
 ```
-apt install nginx
-systemctl status nginx
-systemctl enable --now nginx
-```
-
-**Please ensure the nginx auto start on system reboot any turn on nginx auto start if it is not enabled.**
-
-## Nginx Upgrade
-
-for upgrade the installed nginx to the newest verion
-
-```
 cp -r /etc/nginx /etc/nginx-backup
 wget http://nginx.org/keys/nginx_signing.key
 apt-key add nginx_signing.key
@@ -22,6 +10,8 @@ echo "deb http://nginx.org/packages/mainline/ubuntu `lsb_release -cs` nginx" | t
 apt update
 apt install nginx
 ```
+
+**Please ensure the nginx auto start on system reboot any turn on nginx auto start if it is not enabled.**
 
 ## Certbot Installation
 
