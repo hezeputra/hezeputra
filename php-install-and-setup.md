@@ -2,16 +2,16 @@
 
 ## PHP Install
 
-1. check the available php module. You can replace 8.0 version to another version, e.g. 8.1, 8.2, etc.
+1. check the available php module. You can replace 8.1 version to another version, e.g. 8.2, etc.
 
 ```
-apt-cache search php|grep ^php8.0
+apt-cache search php|grep ^php8.1
 ```
 
 2. install the php-fpm and its module
 
 ```
-apt install php8.0-fpm php8.0-xml php8.0-curl php8.0-mysql php8.0-cli php8.0-opcache php8.0-mbstring php8.0-gd php8.0-cgi php8.0-common php8.0-ldap php8.0-zip php8.0-bcmath
+apt install php8.1-fpm php8.1-xml php8.1-curl php8.1-mysql php8.1-cli php8.1-opcache php8.1-mbstring php8.1-gd php8.1-cgi php8.1-common php8.1-ldap php8.1-zip php8.1-bcmath
 ```
 
 ## Multiple PHP Version
