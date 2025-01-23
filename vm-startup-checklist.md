@@ -107,5 +107,5 @@ ufw allow 443/tcp
 1. modify the `/etc/ufw/before.rules` configuration by checking for icmp codes for input and modify or add the following configuration
 
 ```
--A ufw-before-input -p icmp --icmp-type- echo-request -j DROP
+-A ufw-before-input -p icmp --icmp-type echo-request -j DROP
 ```
