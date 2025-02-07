@@ -14,6 +14,24 @@ apt-cache search php|grep ^php8.1
 apt install php8.1-fpm php8.1-xml php8.1-curl php8.1-mysql php8.1-cli php8.1-opcache php8.1-mbstring php8.1-gd php8.1-cgi php8.1-common php8.1-ldap php8.1-zip php8.1-bcmath
 ```
 
+## PHP Setup
+
+1. Modify the setting in `/etc/php/8.1/fpm/php.ini` using by these values:
+
+```
+memory_limit = 512M
+upload_max_filesize = 128M
+post_max_size = 128M
+max_execution_time = 300
+cgi.fix_pathinfo=0
+```
+
+2. Restart the service
+
+```
+sudo systemctl restart php8.1-fpm
+```
+
 ## Multiple PHP Version
 
 ```

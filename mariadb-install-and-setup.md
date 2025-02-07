@@ -59,7 +59,7 @@ CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'newuserspassword';
 4. Grant privilege specific database.
 
 ```
-GRANT ALL PRIVILEGES ON yourdatabase.\* TO 'username'@'localhost';
+GRANT ALL PRIVILEGES ON yourdatabase.* TO 'username'@'localhost';
 FLUSH PRIVILEGES;
 
 ```
@@ -68,7 +68,7 @@ FLUSH PRIVILEGES;
 
 ```
 
-GRANT ALL PRIVILEGES ON \*.\* TO 'username'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 
 ```
