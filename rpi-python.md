@@ -28,13 +28,15 @@ pip3 install evdev
 
 ## Running Python as a Service
 
+### Running phyton script
+
 1. asd
 
 ```
 chmod +x /home/youruser/your_project/rfid_reader.py
 ```
 
-1. Create service at `/etc/systemd/system/MYSERVICE.service`
+2. Create service at `/etc/systemd/system/MYSERVICE.service`
 
 ```
 [Unit]
@@ -43,7 +45,7 @@ After=network.target
 
 [Service]
 WorkingDirectory=/path/to/working/directory
-ExecStart=/path/to/virtual_env/bin/python /path/to/your/script
+ExecStart=/path/to/VIRTUAL_ENV/bin/python /path/to/your/script/SCRIPTNAME.py
 Restart=always
 RestartSec=5
 user=root
@@ -68,3 +70,43 @@ sudo systemctl status MYSERVICE.service
 >
 > 1. Replace `MYSERVICE` with the service name.
 > 2. Replace `DESCRITPTION` with the service description.
+> 3. Replace `SCRIPTNAME` with the script name.
+> 4. Replace `VIRTUAL_ENV` with the virtual env folder name.
+
+### Running phyton bytecode
+
+```
+python3 -m py_compile SCRIPTNAME.py
+mv __pycache__/*.cpython-*.pyc /opt/SCRIPTNAME/SCRIPTNAME.pyc
+mv -r virtual_env /opt/SCRIPTNAME/virtual_env
+```
+
+2. Create service at `/etc/systemd/system/MYSERVICE.service`
+
+```
+
+[Unit]
+Description=DESCRITPTION
+After=network.target
+
+[Service]
+WorkingDirectory=/path/to/working/directory
+ExecStart=/opt/SCRIPTNAME/VIRTUAL_ENV/bin/python /opt/SCRIPTNAME/SCRIPTNAME.pyc
+Restart=always
+RestartSec=5
+user=root
+group=root
+StandardOutput=append:/var/log/MYSERVICE.log
+StandardError=append:/var/log/MYSERVICE.err
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
+> [!IMPORTANT]
+>
+> 1. Replace `MYSERVICE` with the service name.
+> 2. Replace `DESCRITPTION` with the service description.
+> 3. Replace `SCRIPTNAME` with the script name.
+> 4. Replace `VIRTUAL_ENV` with the virtual env folder name.
