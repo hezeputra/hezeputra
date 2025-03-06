@@ -3,7 +3,7 @@
 ## Preinstalation
 
 ```
-ip=192.168.1.2::192.168.1.1:255.255.255.0:rpi:eth0:off
+ip=192.168.1.200::192.168.1.1:255.255.255.0:rpi:eth0:off
 ```
 
 ## Post Instalation
@@ -79,13 +79,13 @@ nmcli connection modify "Wired connection 1" connection.id eth0
 2. Configure eth0 static ip, gateway and dns server
 
 ```
-nmcli connection modify eth0 ipv4.addresses 192.168.1.2/24 ipv4.gateway 192.168.1.1 ipv4.dns "8.8.8.8,8.8.4.4" ipv4.method manual && nmcli connection up eth0
+nmcli connection modify eth0 ipv4.addresses 192.168.1.200/24 ipv4.gateway 192.168.1.1 ipv4.dns "8.8.8.8,8.8.4.4" ipv4.method manual && nmcli connection up eth0
 ```
 
 3. Configure wlan0 static ip, gateway and dns server
 
 ```
-nmcli connection modify wlan0 ipv4.addresses 192.168.1.3/24 ipv4.gateway 192.168.1.1 ipv4.dns "8.8.8.8,8.8.4.4" ipv4.method manual && nmcli connection up wlan0
+nmcli connection modify wlan0 ipv4.addresses 192.168.1.201/24 ipv4.gateway 192.168.1.1 ipv4.dns "8.8.8.8,8.8.4.4" ipv4.method manual && nmcli connection up wlan0
 ```
 
 4. Confirm the configuration is corectly applied
@@ -136,4 +136,31 @@ rfkill unblock wifi
 
 ```
 ip link set wlan0 up
+```
+
+```
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+country=ID
+
+network={
+    ssid="SSID1"
+    psk="PSK1"
+    key_mgmt=WPA-PSK
+    priority=10
+}
+
+network={
+    ssid="SSID2"
+    psk="PSK2"
+    key_mgmt=WPA-PSK
+    priority=5
+}
+
+network={
+    ssid="SSID3"
+    psk="PSK3"
+    key_mgmt=WPA-PSK
+    priority=2
+}
 ```
