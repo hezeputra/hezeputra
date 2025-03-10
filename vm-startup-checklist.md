@@ -3,9 +3,8 @@
 ## Unattended Security Update
 
 ```
-apt update
-apt dist-upgrade
-apt install unattended-upgrades
+apt-get update && sudo apt-get upgrade -y
+apt install unattended-upgrades -y
 dpkg-reconfigure --priority=low unattended-upgrades
 ```
 

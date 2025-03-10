@@ -76,15 +76,14 @@ sudo systemctl status MYSERVICE.service
 ### Running phyton bytecode
 
 ```
-python3 -m py_compile SCRIPTNAME.py
-mv __pycache__/*.cpython-*.pyc /opt/SCRIPTNAME/SCRIPTNAME.pyc
-mv -r virtual_env /opt/SCRIPTNAME/virtual_env
+python3 -m py_compile rfidreaderv2.py
+mv __pycache__/rfidreaderv2.cpython-*.pyc /opt/rfidreader/rfidreaderv2.pyc
+mv -r virtual_env /opt/rfidreader/virtual_env
 ```
 
 2. Create service at `/etc/systemd/system/MYSERVICE.service`
 
 ```
-
 [Unit]
 Description=DESCRITPTION
 After=network.target
