@@ -42,6 +42,7 @@ mkdir ~/.ssh && chmod 700 ~/.ssh
 
 ```
 ssh-keygen -b 4096 (in your local computer)
+ssh-keygen -t rsa (in your local computer)
 scp -P port public_key_filename.pub username@serverip:~/.ssh/authorized_keys
 ```
 

@@ -76,12 +76,12 @@ sudo systemctl status MYSERVICE.service
 ### Running phyton bytecode
 
 ```
-python3 -m py_compile rfidreaderv2.py
-mv __pycache__/rfidreaderv2.cpython-*.pyc /opt/rfidreader/rfidreaderv2.pyc
-mv -r virtual_env /opt/rfidreader/virtual_env
+python3 -m py_compile parkingsystem.py
+mv __pycache__/parkingsystem.cpython-*.pyc /opt/parkingsystem/parkingsystem.pyc
+mv -r parkingsystem_env /opt/parkingsystem/parkingsystem_env
 ```
 
-2. Create service at `/etc/systemd/system/MYSERVICE.service`
+2. Create service at `/etc/systemd/system/rfidreader.service`
 
 ```
 [Unit]
