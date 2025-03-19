@@ -23,7 +23,7 @@ source rfid_env/bin/activate
 4. Install the venv dependencies
 
 ```
-pip3 install evdev
+pip3 install evdev python-dotenv
 ```
 
 ## Running Python as a Service
@@ -78,10 +78,10 @@ sudo systemctl status MYSERVICE.service
 ```
 python3 -m py_compile parkingsystem.py
 mv __pycache__/parkingsystem.cpython-*.pyc /opt/parkingsystem/parkingsystem.pyc
-mv -r parkingsystem_env /opt/parkingsystem/parkingsystem_env
+cp -r parkingsystem_env /opt/parkingsystem/parkingsystem_env
 ```
 
-2. Create service at `/etc/systemd/system/rfidreader.service`
+2. Create service at `/etc/systemd/system/parkingsystem.service`
 
 ```
 [Unit]
