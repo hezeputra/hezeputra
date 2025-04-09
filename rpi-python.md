@@ -5,7 +5,7 @@
 1. Dependencies installation
 
 ```
-sudo apt install -y python3 python3-pip python3-venv
+sudo apt install -y gpiod python3 python3-pip python3-venv python3-libgpiod
 ```
 
 2. Create and Activate a Virtual Environment
@@ -17,13 +17,13 @@ python3 -m venv rfid_env
 3. Enter the Virtual Environment
 
 ```
-source rfid_env/bin/activate
+source vld_env/bin/activate
 ```
 
 4. Install the venv dependencies
 
 ```
-pip3 install evdev python-dotenv
+pip3 install evdev python-dotenv gpiod
 ```
 
 ## Running Python as a Service
@@ -75,9 +75,13 @@ sudo systemctl status MYSERVICE.service
 
 ### Running phyton bytecode
 
+> [!IMPORTANT]
+>
+> Ensure the compiled bytecode is deleted to update the compiled bytecode if you want to update existing bytecode by running `rm /opt/parkingsystem/parkingsystem.pyc`
+
 ```
-python3 -m py_compile parkingsystem.py
-mv __pycache__/parkingsystem.cpython-*.pyc /opt/parkingsystem/parkingsystem.pyc
+/var/www/parkingsystem/parkingsystem_env/bin/python -m py_compile parkingsystem.py
+mv /var/www/parkingsystem/__pycache__/parkingsystem.cpython-*.pyc /opt/parkingsystem/parkingsystem.pyc
 cp -r parkingsystem_env /opt/parkingsystem/parkingsystem_env
 ```
 
