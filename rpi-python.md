@@ -5,25 +5,27 @@
 1. Dependencies installation
 
 ```
-sudo apt install -y gpiod python3 python3-pip python3-venv python3-libgpiod
+sudo apt install -y gpiod python3 python3-pip python3-venv libgpiod-dev python3-libgpiod
 ```
 
 2. Create and Activate a Virtual Environment
 
 ```
-python3 -m venv rfid_env
+python3 -m venv parkingsystem_venv
 ```
 
 3. Enter the Virtual Environment
 
 ```
-source vld_env/bin/activate
+source /var/www/parkingsystem_env/bin/activate
+
+source /opt/parkingsystem/parkingsystem_env/bin/activate
 ```
 
 4. Install the venv dependencies
 
 ```
-pip3 install evdev python-dotenv gpiod
+pip3 install evdev python-dotenv gpiod requests
 ```
 
 ## Running Python as a Service
@@ -36,7 +38,7 @@ pip3 install evdev python-dotenv gpiod
 chmod +x /home/youruser/your_project/rfid_reader.py
 ```
 
-2. Create service at `/etc/systemd/system/MYSERVICE.service`
+2. Create service at `/etc/systemd/system/parkingsystem.service`
 
 ```
 [Unit]
