@@ -82,8 +82,8 @@ sudo systemctl status MYSERVICE.service
 > Ensure the compiled bytecode is deleted to update the compiled bytecode if you want to update existing bytecode by running `rm /opt/parkingsystem/parkingsystem.pyc`
 
 ```
-/var/www/parkingsystem/parkingsystem_env/bin/python -m py_compile parkingsystem.py
-mv /var/www/parkingsystem/__pycache__/parkingsystem.cpython-*.pyc /opt/parkingsystem/parkingsystem.pyc
+/opt/parkingsystem/parkingsystem_venv/bin/python -m py_compile ps.py
+mv /var/www/parkingsystem/__pycache__/ps.cpython-*.pyc /opt/parkingsystem/parkingsystem.pyc
 cp -r parkingsystem_env /opt/parkingsystem/parkingsystem_env
 ```
 
