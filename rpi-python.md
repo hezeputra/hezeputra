@@ -11,13 +11,13 @@ sudo apt install -y python3 python3-pip python3-venv
 2. Create and Activate a Virtual Environment
 
 ```
-python3 -m venv rfid_env
+python3 -m venv parkingsystem_env
 ```
 
 3. Enter the Virtual Environment
 
 ```
-source rfid_env/bin/activate
+source parkingsystem_env/bin/activate
 ```
 
 4. Install the venv dependencies
@@ -78,10 +78,10 @@ sudo systemctl status MYSERVICE.service
 ```
 python3 -m py_compile parkingsystem.py
 mv __pycache__/parkingsystem.cpython-*.pyc /opt/parkingsystem/parkingsystem.pyc
-mv -r virtual_env /opt/rfidreader/virtual_env
+mv -r parkingsystem_env /opt/parkingsystem/parkingsystem_env
 ```
 
-2. Create service at `/etc/systemd/system/parkingsystem.service`
+2. Create service at `/etc/systemd/system/rfidreader.service`
 
 ```
 [Unit]
