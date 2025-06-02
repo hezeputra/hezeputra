@@ -24,7 +24,7 @@ You can install the OS using **Step 1.1**. Please don't forget to prepare extern
 if your Raspberry Pi is brand new and/or never use NVMe SSD as a boot device before, please boot from Micro SD first using **Step 1.1 and 1.2**. Please don't forget to prepare NVMe HAT to connect your NVMe SSD to your Raspberry Pi. After installing the Raspberry OS into Micro SD card, you can install the Raspberry Pi OS on your NVMe SSD using **Step 1.1**. While waiting for the Raspberry OS installation on NVMe SSD complete, you can prepare the Raspberry Pi using instruction as follows:
 
 1. Ensure your system is up to date by running `sudo apt-get update && sudo apt-get upgrade -y`;
-2. Run the latest EEPROM version by typing `sudo rpi-eeprom-update`;
+2. Run the latest EEPROM version by typing `sudo rpi-eeprom-update -a`;
 3. Type `sudo raspi-config`;
 4. Select option `6. Advance Option` in the Menu > select option `B2. NVMe/USB Boot` > select `Ok` and follow the process > Select `Finish` > reboot if your NVMe SSD is ready; and
 5. Install your NVMe HAT and NVMe SSD to your Raspberry Pi.
