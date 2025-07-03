@@ -2,13 +2,17 @@
 
 ## Enable PCIe Gen 3.0 [^1]
 
+### Enable by directly modify the OS file
+
 1. To enable PCIe Gen 3.0 speeds, add the following line to /boot/firmware/config.txt:
 
 ```
 dtparam=pciex1_gen=3
 ```
 
-2. change the raspberry pi configuration
+### Enable by raspi config menu
+
+1. change the raspberry pi configuration
 
 ```
 raspi-config
