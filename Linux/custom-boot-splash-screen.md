@@ -22,32 +22,18 @@ for ubuntu and its derivative
 update-alternatives --config default.plymouth
 ```
 
-3. Apply changes
-
-for X86 Linux
-
-```
-update-initramfs -u
-```
-
-for Raspberry Pi OS
-
-```
-sudo update-initramfs -c -k $(uname -r)
-```
-
 ## Create New Plymouth
 
 1. Create the plymouth theme configuration file
 
 ```
-touch {your-theme}.plymouth
+touch /usr/share/plymouth/themes/{your-theme}/{your-theme}.plymouth
 ```
 
 2. Edit your custom configuration file with your config
 
 ```
-nano {your-theme}.plymouth
+nano /usr/share/plymouth/themes/{your-theme}/{your-theme}.plymouth
 ```
 
 ```
@@ -74,6 +60,38 @@ update-alternatives --install /usr/share/plymouth/themes/default.plymouth defaul
 > The theme .plymouth file path is /usr/share/plymouth/themes/{your-theme}/{your-theme}.plymouth
 > The "100" config at the last param is priority of your theme, the default is 100
 
+## Apply plymouth theme
+
+1. To apply the newly created plymouth theme, you can use the following command:
+
+for debian and its derivative
+
+```
+sudo plymouth-set-default-theme {your-theme}
+```
+
+for ubuntu and its derivative
+
+```
+update-alternatives --config default.plymouth
+```
+
+then select your theme
+
+2. Apply changes
+
+for X86 Linux
+
+```
+update-initramfs -u
+```
+
+for Raspberry Pi OS
+
+```
+sudo update-initramfs -c -k $(uname -r)
+```
+
 ## Remove the Boot Text ("Quiet Splash")
 
 1. Edit GRUB configuration
@@ -83,6 +101,8 @@ nano /etc/default/grub
 ```
 
 2. turn of splash
+
+for X86 linux
 
 ```
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
@@ -94,6 +114,12 @@ GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
 > GRUB_CMDLINE_LINUX_DEFAULT="quiet splash loglevel=0"
 > Optional: Completely remove boot log
 > GRUB_CMDLINE_LINUX_DEFAULT="quiet splash loglevel=0 rd.systemd.show_status=auto vt.global_cursor_default=0"
+
+for debian based raspberry pi os, please add the following line in the cmdline.txt
+
+```
+quiet splash loglevel=0 vt.global_cursor_default=0
+```
 
 3. Disable the GRUB Menu (auto-boot into Ubuntu)
 
