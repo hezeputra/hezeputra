@@ -3,7 +3,7 @@
 ## Unattended Security Update
 
 ```
-apt-get update && sudo apt-get upgrade -y
+apt-get update && sudo apt-get full-upgrade -y
 apt install unattended-upgrades -y
 dpkg-reconfigure --priority=low unattended-upgrades
 ```
