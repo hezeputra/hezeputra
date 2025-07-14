@@ -24,11 +24,19 @@ update-alternatives --config default.plymouth
 
 3. Apply changes
 
+for X86 Linux
+
 ```
 update-initramfs -u
 ```
 
-## asd
+for Raspberry Pi OS
+
+```
+sudo update-initramfs -c -k $(uname -r)
+```
+
+## Create New Plymouth
 
 1. Create the plymouth theme configuration file
 
@@ -100,6 +108,12 @@ update-grub
 ```
 
 ## Disable the GRUB Menu (auto-boot into Ubuntu)
+
+## Apply boot
+
+```
+sudo plymouth-set-default-theme spinner
+```
 
 ## Reference
 
