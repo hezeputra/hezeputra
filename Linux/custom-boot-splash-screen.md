@@ -118,8 +118,12 @@ GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
 for debian based raspberry pi os, please add the following line in the cmdline.txt
 
 ```
-quiet splash loglevel=0 vt.global_cursor_default=0
+quiet splash plymouth.ignore-serial-consoles loglevel=0 vt.global_cursor_default=0
 ```
+
+> [!IMPORTANT]
+>
+> Make sure `console=tty1` is present and remove `console=serial0,115200` or similar if it exists — that sends logs to serial.
 
 3. Disable the GRUB Menu (auto-boot into Ubuntu)
 

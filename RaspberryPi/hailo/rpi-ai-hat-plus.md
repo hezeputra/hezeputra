@@ -37,7 +37,7 @@ reboot
 1. Install the dependencies required to use the NPU
 
 ```
-apt install hailo-all
+apt install hailo-all meson
 ```
 
 2. Reboot your device
